@@ -1,5 +1,5 @@
-default: dev
-.PHONY: html js ts
+default: run
+.PHONY: html js ts run
 
 dev: html js
 
@@ -14,6 +14,9 @@ ts:
 	
 html: build/
 	cp -R ./is21/*.html ./build
+
+run: dev
+	./node_modules/.bin/http-server ./build
 	
 clean:
 	rm -rf build/
