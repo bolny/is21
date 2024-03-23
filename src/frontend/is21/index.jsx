@@ -20,7 +20,7 @@ const getPaint = async () => {
 
 function Paint({paint}) {
     return (
-        <li key={paint.id}>
+        <li>
             <p><span>{paint.name}</span>-<span>{paint.amount} Liters</span></p>
         </li>
     )
@@ -28,7 +28,7 @@ function Paint({paint}) {
 
 function Lane({lane, paints}) {
     return (
-        <li key={lane.id} >
+        <li>
             <h2>{lane.name}</h2>
             <ul>
                 {paints}
@@ -46,11 +46,11 @@ function Lanes({laneData, paintData}) {
 
         const paints = paintsForLaneData.map((paint) => {
             return (
-                <Paint paint={paint} />
+                <Paint key={paint.id} paint={paint} />
             );
         });
         return (
-            <Lane lane={lane} paints={paints} />
+            <Lane key={lane.id} lane={lane} paints={paints} />
         );
     });
     return (
