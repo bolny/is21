@@ -21,7 +21,7 @@ const getPaint = async () => {
 function renderPaint(paint) {
     return (
         <li key={paint.id}>
-            <p>{paint.name}</p>
+            <p><span>{paint.name}</span>-<span>{paint.amount} Liters</span></p>
         </li>
     )
 }
