@@ -25,7 +25,7 @@ class PaintViewSet(viewsets.ModelViewSet):
 
 class LaneViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows paints to be viewed or edited.
+    API endpoint that allows lanes to be viewed or edited.
     """
     queryset = Lane.objects.all().order_by('-id')
     serializer_class = LaneSerializer
