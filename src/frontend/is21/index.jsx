@@ -21,8 +21,18 @@ const getPaint = async () => {
 
 function Paint({paint}) {
     return (
-        <div>
-            <p><span>{paint.name}</span>-<span>{paint.amount} Liters</span></p>
+        <div className='grid-x'
+            style={{background: paint.colour}}
+        >
+            <div className='cell small-3'>
+                {paint.name}
+            </div>
+            <div className='cell small-3'>
+                {paint.amount}L
+            </div>
+            <div className='cell small-3'>
+                <button className='button'>Edit</button>
+            </div>
         </div>
     )
 }
@@ -87,7 +97,7 @@ function App() {
                     <h2>Paint Inventory</h2>
                 </div>
             </div>
-            <div className="grid-x grid-padding-x small-up-1 medium-up-3, large-up-6">
+            <div className="grid-x grid-padding-x small-up-1 medium-up-3, large-up-3">
                 <Lanes laneData={laneData} paintData={paintData} />
             </div>
         </div>
