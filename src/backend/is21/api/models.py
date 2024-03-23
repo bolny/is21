@@ -16,4 +16,8 @@ class Paint(models.Model):
         max_length=100,
         verbose_name="Colour in hex format, ie. '#a1a1a1'"
     )
+    text_colour = models.CharField(
+        max_length=100,
+        verbose_name="Colour in hex format, ie. '#a1a1a1'"
+    )
     amount = models.IntegerField(verbose_name="Amount in liters", default=0)
