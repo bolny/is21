@@ -29,7 +29,7 @@ function Paint({paint}) {
 
 function Lane({lane, paints}) {
     return (
-        <div className="cell medium-6 large-4">
+        <div className="cell">
             <h2>{lane.name}</h2>
             <div>
                 {paints}
@@ -55,9 +55,9 @@ function Lanes({laneData, paintData}) {
         );
     });
     return (
-        <div>
+        <>
             {lanes}
-        </div>
+        </>
     )
 }
 
@@ -87,7 +87,7 @@ function App() {
                     <h1>Paint Inventory</h1>
                 </div>
             </div>
-            <div className="grid-x">
+            <div className="grid-x grid-padding-x small-up-1 medium-up-3, large-up-6">
                 <Lanes laneData={laneData} paintData={paintData} />
             </div>
         </div>
