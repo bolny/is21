@@ -18,7 +18,7 @@ const getPaint = async () => {
     return response;
 }
 
-function renderPaint(paint) {
+function Paint({paint}) {
     return (
         <li key={paint.id}>
             <p><span>{paint.name}</span>-<span>{paint.amount} Liters</span></p>
@@ -26,7 +26,7 @@ function renderPaint(paint) {
     )
 }
 
-function renderLane(lane, paints) {
+function Lane({lane, paints}) {
     return (
         <li key={lane.id} >
             <h2>{lane.name}</h2>
@@ -37,15 +37,27 @@ function renderLane(lane, paints) {
     )
 }
 
-function renderApp(lanes) {
+function Lanes({laneData, paintData}) {
+    const lanes = laneData.map((lane) => {
+        // Determine the paints to be placed in this lane.
+        const paintsForLaneData = paintData.filter((paint) => {
+            return paint.lane == lane.id;
+        });
+
+        const paints = paintsForLaneData.map((paint) => {
+            return (
+                <Paint paint={paint} />
+            );
+        });
+        return (
+            <Lane lane={lane} paints={paints} />
+        );
+    });
     return (
-        <div>
-            <h1>Paint Inventory</h1>
-            <ul>
-                {lanes}
-            </ul>
-        </div>
-    );
+        <ul>
+            {lanes}
+        </ul>
+    )
 }
 
 function App() {
@@ -66,19 +78,15 @@ function App() {
 
     const paintData = paintQuery.data.data;
     const laneData = laneQuery.data.data;
-    // Build the lanes
-    const lanes = laneData.map((lane) => {
-        // Determine the paints to be placed in this lane.
-        const paintsForLaneData = paintData.filter((paint) => {
-            return paint.lane == lane.id;
-        });
 
-        const paints = paintsForLaneData.map((paint) => {
-            return renderPaint(paint);
-        });
-        return renderLane(lane, paints);
-    });
-    return renderApp(lanes);
+    return (
+        <div>
+            <h1>Paint Inventory</h1>
+            <ul>
+                <Lanes laneData={laneData} paintData={paintData} />
+            </ul>
+        </div>
+    )
 
 }
 
