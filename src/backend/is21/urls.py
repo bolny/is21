@@ -5,6 +5,8 @@ from is21.api import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
+router.register(r'paint', views.PaintViewSet)
+router.register(r'lane', views.LaneViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

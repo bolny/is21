@@ -18,6 +18,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='paint',
             name='colour',
-            field=models.CharField(max_length=100, verbose_name="Color in hex format, ie. '#a1a1a1'"),
+            field=models.CharField(max_length=100, verbose_name="Colour in hex format, ie. '#a1a1a1'"),
         ),
     ]
