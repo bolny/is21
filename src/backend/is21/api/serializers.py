@@ -25,6 +25,7 @@ class LaneSerializer(serializers.HyperlinkedModelSerializer):
         model = Lane
         fields = [
             'url',
+            'id',
             'name',
         ]
 
@@ -41,6 +42,7 @@ class PaintSerializer(serializers.HyperlinkedModelSerializer):
         model = Paint
         fields = [
             'url',
+            'id',
             'lane',
             'name',
             'colour',
