@@ -18,7 +18,7 @@ class PaintViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows paints to be viewed or edited.
     """
-    queryset = Paint.objects.all().order_by('-id')
+    queryset = Paint.objects.all().order_by('id')
     serializer_class = PaintSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -27,6 +27,6 @@ class LaneViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows lanes to be viewed or edited.
     """
-    queryset = Lane.objects.all().order_by('-id')
+    queryset = Lane.objects.all().order_by('id')
     serializer_class = LaneSerializer
     permission_classes = [permissions.IsAuthenticated]
