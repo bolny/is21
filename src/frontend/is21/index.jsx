@@ -30,7 +30,7 @@ function Paint({paint}) {
 function Lane({lane, paints}) {
     return (
         <div className="cell">
-            <h2>{lane.name}</h2>
+            <h4>{lane.name}</h4>
             <div>
                 {paints}
             </div>
@@ -84,7 +84,7 @@ function App() {
         <div className='grid-container' >
             <div className="grid-x">
                 <div className="cell">
-                    <h1>Paint Inventory</h1>
+                    <h2>Paint Inventory</h2>
                 </div>
             </div>
             <div className="grid-x grid-padding-x small-up-1 medium-up-3, large-up-6">
