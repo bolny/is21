@@ -1,16 +1,13 @@
 default: run
-.PHONY: html js ts run
+.PHONY: html js run
 
 dev: html js
 
 build/:
 	mkdir -p ./build
 
-js: ts build/
+js: build/
 	node esbuild.mjs
-	
-ts:
-	./node_modules/.bin/tsc --project .	
 	
 html: build/
 	cp -R ./is21/*.html ./build
