@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 import axios from 'axios'
+import 'foundation-sites/dist/css/foundation.min.css';
 
 const apiRoot = "http://127.0.0.1:8000/";
 const requestOptions = { 
@@ -20,20 +21,20 @@ const getPaint = async () => {
 
 function Paint({paint}) {
     return (
-        <li>
+        <div>
             <p><span>{paint.name}</span>-<span>{paint.amount} Liters</span></p>
-        </li>
+        </div>
     )
 }
 
 function Lane({lane, paints}) {
     return (
-        <li>
+        <div className="cell medium-6 large-4">
             <h2>{lane.name}</h2>
-            <ul>
+            <div>
                 {paints}
-            </ul>
-        </li>
+            </div>
+        </div>
     )
 }
 
@@ -54,9 +55,9 @@ function Lanes({laneData, paintData}) {
         );
     });
     return (
-        <ul>
+        <div>
             {lanes}
-        </ul>
+        </div>
     )
 }
 
@@ -80,11 +81,15 @@ function App() {
     const laneData = laneQuery.data.data;
 
     return (
-        <div>
-            <h1>Paint Inventory</h1>
-            <ul>
+        <div className='grid-container' >
+            <div className="grid-x">
+                <div className="cell">
+                    <h1>Paint Inventory</h1>
+                </div>
+            </div>
+            <div className="grid-x">
                 <Lanes laneData={laneData} paintData={paintData} />
-            </ul>
+            </div>
         </div>
     )
 

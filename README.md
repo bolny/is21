@@ -99,4 +99,4 @@ Stuff I haven't gotten to that I would improve in further iterations.
 - [ ] Typing
 - [ ] Proper Admin panel
 ...
-- [ ] Separate front end and backend into seperate repos/services
+- [ ] Separate front end and backend into eperate repos/services
