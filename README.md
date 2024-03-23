@@ -89,10 +89,12 @@ C4Context
 Stuff I haven't gotten to that I would improve in further iterations.
 
 - [ ] Proper session or token authentication
+- [ ] Proper user management (currently need to use django management script)
 - [ ] Switch from development server to Apache or Nginx
 - [ ] More tests
 - [ ] E2E tests
 - [ ] Drag and Drop
+- [ ] Lane ordering
 - [ ] Typing
 - [ ] Proper Admin panel
 ...
