@@ -26,8 +26,8 @@ Liters) and the swim lanes (available, running low, out of stock) are.
     - As a result I will not automatically handle this relationship, ie. swim
     lane and amount of paint will be edited separately.
 - Needs to support desktop and mobile layouts (reactive)
-- There are a relatively small number of colours (not hundreds), so a mobile view
-could stack the columns for ease
+- There are a relatively small number of colours (not hundreds), so a mobile
+view could stack the columns for ease
 
 ER Diagram for the database schema:
 
@@ -57,7 +57,7 @@ erDiagram
 Notes:
 - I'm using Django for the backend and the User model is provided by the built
 in Auth package.
-- The colour field of the paint is used for rendering by the front end. A user
+- The colour field of the paint is used for rendering by the front end.
 will
 
 ## Infrastructure
@@ -83,3 +83,17 @@ C4Context
     BiRel(gate, be, "http")
     BiRel(be, db, "")
 ```
+
+## To Do
+
+Stuff I haven't gotten to that I would improve in further iterations.
+
+- [ ] Proper session or token authentication
+- [ ] Switch from development server to Apache or Nginx
+- [ ] More tests
+- [ ] E2E tests
+- [ ] Drag and Drop
+- [ ] Typing
+- [ ] Proper Admin panel
+...
+- [ ] Separate front end and backend into seperate repos/services
