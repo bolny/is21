@@ -16,7 +16,7 @@ RUN python -m pip install -r ./src/backend/requirements.txt
 RUN make build
 RUN python src/backend/manage.py migrate
 
-EXPOSE 8000
+EXPOSE 80
 ENTRYPOINT ["python", "src/backend/manage.py"]
 CMD ["runserver", "0.0.0.0:80"]
 
