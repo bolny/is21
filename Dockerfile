@@ -14,6 +14,7 @@ COPY . .
 RUN npm i --prefix ./src/frontend
 RUN python -m pip install -r ./src/backend/requirements.txt
 RUN make build
+RUN python src/backend/manage.py migrate
 
 EXPOSE 8000
 ENTRYPOINT ["python", "src/backend/manage.py"]
