@@ -21,7 +21,7 @@ function Paint({paint, laneData}) {
                 {paint.name}
             </div>
             <div className='cell small-3'>
-                {paint.amount}
+                {paint.amount} Liters
             </div>
             <div className='cell small-3'>
                 <button className='button' onClick={showForm}>Edit</button>
