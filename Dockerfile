@@ -15,6 +15,7 @@ RUN npm i --prefix ./src/frontend
 RUN python -m pip install -r ./src/backend/requirements.txt
 RUN make build
 RUN python src/backend/manage.py migrate
+RUN python src/backend/manage.py loaddata src/backend/initial_fixtures.json
 
 EXPOSE 80
 ENTRYPOINT ["python", "src/backend/manage.py"]
