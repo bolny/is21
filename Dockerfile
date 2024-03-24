@@ -17,5 +17,5 @@ RUN make build
 
 EXPOSE 8000
 ENTRYPOINT ["python", "src/backend/manage.py"]
-CMD ["runserver", "35.93.47.233"]
+CMD ["runserver", "35.93.47.233:80"]
 
