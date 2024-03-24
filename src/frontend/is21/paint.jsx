@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { backendClient } from "./backendClient";
 import { LaneSelectForm } from "./lanes";
 
+// All JSX components to do with paint.
+
 function Paint({paint, laneData}) {
     const [shouldShowForm, setShouldShowForm] = useState(false);
 

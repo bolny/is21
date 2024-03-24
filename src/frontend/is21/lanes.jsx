@@ -1,6 +1,8 @@
 import React from "react";
 import { Paint } from "./paint";
 
+// All JSX components to do with Lanes.
+
 function Lane({lane, paints}) {
     return (
         <div className="cell">

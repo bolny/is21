@@ -2,6 +2,8 @@ import axios from 'axios'
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 import { apiRoot, requestOptions } from './config';
 
+// The backend client handles all communication to the backend.
+
 const backendClient = {
     getLanes: async () => {
         const response = await axios.get(apiRoot + "lane/", requestOptions);

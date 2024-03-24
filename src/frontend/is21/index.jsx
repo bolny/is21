@@ -6,8 +6,9 @@ import 'foundation-sites/dist/css/foundation.min.css';
 import { Lanes } from './lanes';
 import { backendClient } from './backendClient';
 
+// The main entrypoint into the front end app.
+
 function App() {
-    // Handle data binding.
     const laneQuery = useQuery('lanes', backendClient.getLanes);
     const paintQuery = useQuery('paint', backendClient.getPaint);
 
