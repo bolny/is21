@@ -88,6 +88,8 @@ C4Context
 
 Stuff I haven't gotten to that I would improve in further iterations.
 
+- [ ] A non-sqlite database
+- [ ] Auto deploy on commit
 - [ ] Proper session or token authentication
 - [ ] Proper user management (currently need to use django management script)
 - [x] Refactor front end to be modular.
